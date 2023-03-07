@@ -12,7 +12,7 @@ public class ScoreManager : MonoBehaviour
     public void onFinished(object score)
     {
         // Score
-        //Debug.Log("Score Test success");
+        Debug.Log("Score Test success");
 
         // Set score to list in here (registers when called with triggerEvent)
     }

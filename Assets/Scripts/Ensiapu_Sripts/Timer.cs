@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
-    private float timePassed = 0;
+    public static float timePassed = 0;
 
     public TextMeshProUGUI timerText;
 
@@ -20,7 +20,7 @@ public class Timer : MonoBehaviour
 
         if(timePassed > 10)
         {
-            EventSystem.Instance.TriggerEvent("score-event", timePassed * 100);
+            EventSystem.Instance.TriggerEvent("score-event", timePassed);
         }
     }
 }
