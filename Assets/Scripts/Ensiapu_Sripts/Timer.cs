@@ -20,7 +20,7 @@ public class Timer : MonoBehaviour
 
         if(timePassed > 10)
         {
-            EventSystem.Instance.TriggerEvent("score-event", timePassed * 100);
+            EventSystem.Instance.TriggerEvent("score-event", timePassed);
         }
     }
 }
