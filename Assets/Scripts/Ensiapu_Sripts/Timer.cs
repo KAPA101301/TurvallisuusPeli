@@ -7,7 +7,7 @@ public class Timer : MonoBehaviour
 {
     public static float timePassed = 0;
 
-    public TextMeshProUGUI timerText;
+    //public TextMeshProUGUI timerText;
 
     [SerializeField]
     private TimeSO scoreTimeSO;
@@ -26,7 +26,7 @@ public class Timer : MonoBehaviour
         int milliseconds = Mathf.FloorToInt(timePassed * 1000 - seconds*1000 - minutes*60*1000);
 
         // Added milliseconds
-        timerText.text = minutes.ToString("00") + ":" + seconds.ToString("00") + ":" + milliseconds.ToString("000");
+        //timerText.text = minutes.ToString("00") + ":" + seconds.ToString("00") + ":" + milliseconds.ToString("00");
 
         //Push values to ScriptalbeObject TimoSO
         scoreTimeSO.Minutes = minutes;

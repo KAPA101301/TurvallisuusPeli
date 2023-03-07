@@ -4,41 +4,49 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class EventSystem : MonoBehaviour
+public class EventSystem : MonoSingleton<EventSystem>
 {
-    private static EventSystem instance;
+    //private static EventSystem instance;
 
     private Dictionary<string, List<Action<object>>> eventCallbacks;
 
-    public static EventSystem Instance
-    {
-        get
-        {
-            if (instance == null)
-            {
-                instance = FindObjectOfType<EventSystem>();
+    //public static EventSystem Instance
+    //{
+    //    get
+    //    {
+    //        if (instance == null)
+    //        {
+    //            instance = FindObjectOfType<EventSystem>();
 
-                if (instance == null)
-                {
-                    Debug.LogError("An instance of EventSystem is needed in the scene, but there is none.");
-                }
-            }
+    //            if (instance == null)
+    //            {
+    //                instance = new EventSystem();
+    //                DontDestroyOnLoad(instance);
+    //                Debug.LogError("An instance of EventSystem is needed in the scene, but there is none.");
+    //            }
+    //        }
+    //        return instance;
+    //    }
+    //}
+    //protected override void Awake()
+    //{
+    //    base.Awake();
+    //    if (instance == null)
+    //    {
+    //        instance = this;
+    //        eventCallbacks = new Dictionary<string, List<Action<object>>>();
+    //        DontDestroyOnLoad(gameObject);
+    //    }
+    //    else
+    //    {
+    //        Destroy(gameObject);
+    //    }
+    //}
 
-            return instance;
-        }
-    }
-    private void Awake()
+    protected override void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-            eventCallbacks = new Dictionary<string, List<Action<object>>>();
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        base.Awake();
+        eventCallbacks = new Dictionary<string, List<Action<object>>>();
     }
 
     public void TriggerEvent(string eventName, object data)
