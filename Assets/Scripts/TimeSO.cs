@@ -7,12 +7,26 @@ using UnityEngine;
 public class TimeSO : ScriptableObject
 {
     [SerializeField]
-    private float m_Time;
+    private float Min;
+    [SerializeField]
+    private float Sec;
+    [SerializeField]
+    private float Mills;
 
-    public float Time
+    public float Minutes
     {
-        get { return m_Time; }
-        set { m_Time = value; }
+        get { return Min; }
+        set { Min = value; }
+    }
+    public float Seconds
+    {
+        get { return Sec; }
+        set { Sec = value; }
+    }
+    public float MilliSeconds
+    {
+        get { return Mills; }
+        set { Mills = value; }
     }
 
 }
