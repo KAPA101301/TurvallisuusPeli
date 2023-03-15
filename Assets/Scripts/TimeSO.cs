@@ -12,6 +12,10 @@ public class TimeSO : ScriptableObject
     private float Sec;
     [SerializeField]
     private float Mills;
+    [SerializeField]
+    private string Name; 
+    [SerializeField]
+    private string Group;
 
     public float Minutes
     {
@@ -27,6 +31,16 @@ public class TimeSO : ScriptableObject
     {
         get { return Mills; }
         set { Mills = value; }
+    }
+    public string GroupName
+    {
+        get { return Group; }
+        set { Group = value; }
+    }
+    public string PlayerName
+    {
+        get { return Name; }
+        set { Name = value; }
     }
 
 }
